@@ -1,6 +1,6 @@
-import { expect } from "chai";
-import { ethers } from "hardhat";
-import solc from "solc";
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
+const solc = require("solc");
 
 describe("TokenVault", function () {
   async function deployVaultFixture() {
