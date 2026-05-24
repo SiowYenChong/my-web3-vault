@@ -5,7 +5,7 @@ async function main() {
   const tokenVault = await TokenVault.deploy();
   await tokenVault.waitForDeployment();
 
-  console.log("Contract deployed to: ", tokenVault.target);
+  console.log(`Contract deployed to: ${await tokenVault.getAddress()}`);
 }
 
 main().catch((error) => {
