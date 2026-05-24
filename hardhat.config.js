@@ -1,12 +1,15 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
+import "@nomicfoundation/hardhat-toolbox";
+import dotenv from "dotenv";
 
-module.exports = {
+dotenv.config();
+
+export default {
   solidity: "0.8.20",
   networks: {
     sepolia: {
+      type: "http",
       url: process.env.RPC_URL,
-      accounts: [process.env.DEPLOYER_KEY]
-    }
-  }
+      accounts: process.env.DEPLOYER_KEY ? [process.env.DEPLOYER_KEY] : [],
+    },
+  },
 };
